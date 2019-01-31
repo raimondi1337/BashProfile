@@ -2,7 +2,7 @@
 alias ls='ls -1 -G'
 
 # quickly convert a video to gif with optional resize
-function gif() {
+gif() {
     ffmpeg -i "$1" $(if [ x"$2" != x ]; then echo "-vh scale=${2}:-1 "; fi) -pix_fmt rgb24 -r 10 -threads 8 -y output.gif
 }
 
